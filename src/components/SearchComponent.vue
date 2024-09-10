@@ -7,7 +7,24 @@
 
 <script>
     export default {
-        name: 'SearchComponent'
+        name: 'SearchComponent',
+        data() {
+            return {
+                pokemonName: ''
+            }
+        },
+        methods: {
+            fetchPokemon(){
+                const name = this.pokemonName.trim().toLowerCase();
+
+                try{
+                    const response = axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+                    console.log(response.data);
+                } catch(err){
+                    
+                }
+            }
+        },
     }
 </script>
 
