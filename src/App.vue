@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h1>ciao</h1>
-    <i class="fa fa-solid fa-home"></i>
+    <SearchComponent />
   </div>
 </template>
 
 <script>
+import SearchComponent from './components/SearchComponent.vue';
+
   export default {
-    
+    name: 'App',
+    components: {
+      SearchComponent
+    },
   }
 </script>
 

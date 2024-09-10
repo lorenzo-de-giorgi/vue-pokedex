@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import axios from 'axios';
     export default {
         name: 'SearchComponent',
         data() {
@@ -17,12 +18,11 @@
             fetchPokemon(){
                 const name = this.pokemonName.trim().toLowerCase();
 
-                try{
-                    const response = axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-                    console.log(response.data);
-                } catch(err){
+                console.log(name);
 
-                }
+                const response = axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+                console.log(response);
+
             }
         },
     }
