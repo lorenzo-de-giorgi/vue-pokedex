@@ -1,16 +1,19 @@
 <template>
   <div>
-    <SearchComponent />
+    <PokedexComponent />
+    <!-- <SearchComponent /> -->
   </div>
 </template>
 
 <script>
+import PokedexComponent from './components/PokedexComponent.vue';
 import SearchComponent from './components/SearchComponent.vue';
 
   export default {
     name: 'App',
     components: {
-      SearchComponent
+      SearchComponent,
+      PokedexComponent
     },
   }
 </script>
