@@ -71,28 +71,7 @@
             display: flex;
             width: 100%;
             margin-bottom: 20px;
-
-        input {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #333;
-            border-radius: 5px 0 0 5px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #333;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-
-        img {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    }
+        }   
 
     .pokemon-display {
         background-color: #fff;

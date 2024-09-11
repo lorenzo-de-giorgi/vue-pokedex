@@ -1,7 +1,7 @@
 <template>
     <div>
         <input v-model="pokemonName" placeholder="Inserisci il nome del pokemon" @keyup.enter="fetchPokemon">
-        <button @click="fetchPokemon">Cerca</button>
+        <button @click="fetchPokemon"><i class="fa-solid fa-magnifying-glass"></i> | Cerca</button>
     </div>
 
     <div v-if="pokemon">
@@ -47,5 +47,21 @@ import { capitalize } from 'vue';
 </script>
 
 <style lang="scss" scoped>
+
+    input {
+        flex: 1;
+        padding: 10px;
+        border: 2px solid #333;
+        border-radius: 5px 0 0 5px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #333;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
 
 </style>
