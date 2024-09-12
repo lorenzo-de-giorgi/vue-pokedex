@@ -3,13 +3,18 @@
       <div class="pokedex">
         <div class="left-panel">
           <div class="search-bar">
-            <SearchComponent />
+            <SearchComponent @pokemon-selected="updatePokemonDisplay" />
           </div>
           <div class="pokemon-display">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Poké Ball" />
+            <img :src="selectedPokemon.imageUrl" alt="Pokémon Image" v-if="selectedPokemon.imageUrl" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Poké Ball" v-else />
           </div>
           <div class="pokemon-info">
-            No valid Pokémon selected!
+            <p v-if="selectedPokemon.name"><strong>Name:</strong> {{ selectedPokemon.name }}</p>
+            <p v-if="selectedPokemon.height"><strong>Height:</strong> {{ selectedPokemon.height }}</p>
+            <p v-if="selectedPokemon.weight"><strong>Weight:</strong> {{ selectedPokemon.weight }}</p>
+            <p v-if="selectedPokemon.baseExperience"><strong>Base Experience:</strong> {{ selectedPokemon.baseExperience }}</p>
+            <p v-else>No valid Pokémon selected!</p>
           </div>
         </div>
         <div class="right-panel">
@@ -24,15 +29,36 @@
     import SearchComponent from './SearchComponent.vue';
 
     export default {
-        name: 'PokedexComponent',
-        components: {
-            SearchComponent
-        },
-        data() {
-            return {
-                
-            };
+      name: 'PokedexComponent',
+      components: {
+        SearchComponent
+      },
+      data() {
+        return {
+          selectedPokemon: {
+            name: '',
+            imageUrl: '',
+            height: '',
+            weight: '',
+            baseExperience: ''
+          }
+        };
+      },
+      methods: {
+        updatePokemonDisplay(pokemon){
+          if(pokemon){
+            this.selectedPokemon = pokemon;
+          } else {
+            this.selectedPokemon = {
+              name: '',
+              imageUrl: '',
+              height: '',
+              weight: '',
+              baseExperience: ''
+            }
+          }
         }
+      }
     };
 </script>
 
