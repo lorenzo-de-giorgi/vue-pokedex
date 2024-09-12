@@ -75,7 +75,7 @@
     .pokedex {
         display: flex;
         width: 800px;
-        height: 400px;
+        height: 600px;
         background-color: #cc0000;
         border-radius: 15px;
         padding: 20px;
