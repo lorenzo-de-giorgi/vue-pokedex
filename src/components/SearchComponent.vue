@@ -38,6 +38,14 @@ import { capitalize } from 'vue';
                     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
                     console.log(response.data);
                     this.pokemon = response.data;
+
+                    this.$emit('pokemon-selected', {
+                        name: this.pokemon.name,
+                        imageUrl: this.pokemon.sprites.front_default,
+                        height: this.pokemon.height,
+                        weight: this.pokemon.weight,
+                        baseExperience: this.pokemon.base_experience
+                    })
                 } catch(err){
                     this.error = 'Pokemon non trovato. Prova con un altro nome!';
                 }
