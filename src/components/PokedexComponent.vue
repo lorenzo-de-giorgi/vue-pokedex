@@ -86,6 +86,10 @@ export default {
       } else {
         console.log('Nessun Pokémon salvato nel localStorage.');
       }
+    },
+
+    removePokemon(){
+
     }
   },
   // Quando il componente viene montato, carica i Pokémon dal localStorage
