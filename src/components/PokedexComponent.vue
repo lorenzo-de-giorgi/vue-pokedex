@@ -24,7 +24,7 @@
         <div v-if="myPokemons.length > 0">
           <ul>
             <li v-for="(pokemon, index) in myPokemons" :key="index">
-              <strong>{{ pokemon.name }}</strong> - Height: {{ pokemon.height }}, Weight: {{ pokemon.weight }}
+              <strong>{{ pokemon.name }}</strong> - Height: {{ pokemon.height }}, Weight: {{ pokemon.weight }} <button @click="" class="btn btn-danger ms-2"><i class="fa-solid fa-trash"></i></button>
             </li>
           </ul>
         </div>
