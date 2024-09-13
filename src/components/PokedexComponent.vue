@@ -24,7 +24,7 @@
         <div v-if="myPokemons.length > 0">
           <ul>
             <li v-for="(pokemon, index) in myPokemons" :key="index">
-              <strong>{{ pokemon.name }}</strong> - Height: {{ pokemon.height }}, Weight: {{ pokemon.weight }} <button @click="" class="btn btn-danger ms-2"><i class="fa-solid fa-trash"></i></button>
+              <strong>{{ pokemon.name }}</strong> - Height: {{ pokemon.height }}, Weight: {{ pokemon.weight }} <button @click="removePokemon(index)" class="btn btn-danger ms-2"><i class="fa-solid fa-trash"></i></button>
             </li>
           </ul>
         </div>
@@ -88,8 +88,9 @@ export default {
       }
     },
 
-    removePokemon(){
-
+    removePokemon(index){
+      this.myPokemons.splice(index, 1);
+      localStorage.setItem('myPokemons', JSON.stringify(this.myPokemons));
     }
   },
   // Quando il componente viene montato, carica i Pokémon dal localStorage
