@@ -16,7 +16,7 @@
           <p v-if="selectedPokemon.baseExperience"><strong>Base Experience:</strong> {{ selectedPokemon.baseExperience }}</p>
           <p v-else>No valid Pokémon selected!</p>
         </div>
-        <button @click="addPokemon">Add to My Pokémons</button>
+        <button class="btn btn-primary mt-3" @click="addPokemon">Add to My Pokémons</button>
       </div>
       <div class="right-panel">
         <h2>My Pokémons</h2>
