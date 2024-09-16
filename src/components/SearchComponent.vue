@@ -56,7 +56,7 @@ import { capitalize } from 'vue';
     }
 
     button {
-        padding: 10px;
+        padding: 12px;
         background-color: #333;
         border: none;
         border-radius: 0 5px 5px 0;
