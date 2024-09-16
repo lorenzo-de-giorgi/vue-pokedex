@@ -17,6 +17,7 @@
           <p v-else>No valid Pokémon selected!</p>
         </div>
         <button class="btn btn-primary mt-3" @click="addPokemon">Add to My Pokémons</button>
+        <FooterComponent />
       </div>
       <div class="right-panel">
         <h2>My Pokémons</h2>
@@ -32,15 +33,20 @@
       </div>
     </div>
   </div>
+  <footer>
+    
+  </footer>
 </template>
 
 <script>
+import FooterComponent from './FooterComponent.vue';
 import SearchComponent from './SearchComponent.vue';
 
 export default {
   name: 'PokedexComponent',
   components: {
-    SearchComponent
+    SearchComponent,
+    FooterComponent
   },
   data() {
     return {
