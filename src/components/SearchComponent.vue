@@ -3,7 +3,6 @@
         <input v-model="pokemonName" placeholder="Inserisci il nome del pokemon" @keyup.enter="fetchPokemon">
         <button @click="fetchPokemon"><i class="fa-solid fa-magnifying-glass"></i> | Cerca</button>
     </div>
-    <div v-if="error" class="error">{{ error }}</div>
 </template>
 
 <script>
